@@ -47,7 +47,7 @@ module.exports = {
     },
   },
 
-  publicPath: process.env.NODE_ENV === 'production' ? '/gomoku-calculator/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
 
   pwa: {
     name: 'Gomoku Calculator',
