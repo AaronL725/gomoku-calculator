@@ -47,7 +47,7 @@ async function init(callbackFn_, loadFullEngine) {
     (supportSIMD && loadFullEngine ? '-simd128' : '') +
     (supportRelaxedSIMD && loadFullEngine ? '-relaxed' : '')
   const engineDir = loadFullEngine ? '/' : '/fallback/'
-  const engineURL = `${process.env.BASE_URL}build${engineDir}rapfi${engineFlags}.js`
+  const engineURL = new URL(`${process.env.BASE_URL}build${engineDir}rapfi${engineFlags}.js`, document.baseURI).href
 
   if (supportThreads) {
     await script.import(/* webpackIgnore: true */ engineURL)
